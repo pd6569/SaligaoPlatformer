@@ -8,15 +8,25 @@ export class GameScene extends Phaser.Scene {
   }
 
   create() {
-    // Add background
-    this.add.image(400, 300, 'background');
+    // Set background color
+    this.cameras.main.setBackgroundColor('#87CEEB');
 
     // Create platforms group
     this.platforms = this.physics.add.staticGroup();
-    this.platforms.create(400, 568, 'platform').setScale(2).refreshBody();
+    
+    // Create ground platform
+    this.platforms.create(400, 550, 'platform')
+      .setScale(2)
+      .refreshBody();
+    
+    // Create some floating platforms
+    this.platforms.create(600, 400, 'platform');
+    this.platforms.create(50, 250, 'platform');
+    this.platforms.create(750, 220, 'platform');
 
     // Create player
     this.player = this.physics.add.sprite(100, 450, 'player');
+    this.player.setScale(0.5); // Scale down the player sprite if needed
     this.player.setBounce(0.2);
     this.player.setCollideWorldBounds(true);
 
@@ -25,6 +35,14 @@ export class GameScene extends Phaser.Scene {
 
     // Set up controls
     this.cursors = this.input.keyboard.createCursorKeys();
+
+    // Add debug text
+    this.add.text(16, 16, 'Use arrow keys to move & jump', {
+      fontSize: '18px',
+      fill: '#fff',
+      backgroundColor: '#000',
+      padding: { x: 10, y: 5 }
+    });
   }
 
   update() {

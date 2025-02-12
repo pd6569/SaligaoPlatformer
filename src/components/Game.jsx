@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Phaser from 'phaser';
-import { gameConfig } from '../game/config';
+import { gameConfig } from '../game/game.config';
 import { BootScene } from '../game/scenes/BootScene';
 import { PreloadScene } from '../game/scenes/PreloadScene';
 import { GameScene } from '../game/scenes/GameScene';

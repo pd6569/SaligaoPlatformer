@@ -14,7 +14,7 @@ export class PreloadScene extends Phaser.Scene {
 
     // Load game assets
     this.load.image('player', '/assets/sprites/placeholder-character.png');
-    this.load.image('background', '/assets/backgrounds/background.png');
+    this.load.image('platform', '/assets/sprites/platform.png');
     // Add more asset loading here
   }
 
