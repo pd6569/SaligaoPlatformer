@@ -1,3 +1,5 @@
+import ljCoolJSprite from '../assets/sprites/placeholder-character.png';
+
 export const characters = {
     ancestor1: {
       name: 'LJ Cool J',

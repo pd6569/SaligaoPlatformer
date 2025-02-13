@@ -11,6 +11,7 @@ import {
   Grid 
 } from '@mui/material';
 import { characters } from '../game/characters';
+import characterSprite from '../assets/sprites/placeholder-character.png';
 
 const CharacterSelect = () => {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ const CharacterSelect = () => {
               <CardMedia
                 component="img"
                 height="200"
-                image="/assets/sprites/placeholder-character.png"
+                image={characterSprite}
                 alt={character.name}
                 sx={{ objectFit: 'contain', p: 2 }}
               />
