@@ -1,0 +1,115 @@
+# Saligao Adventures Game - Development Status & Next Steps
+
+## Current Implementation Status
+
+### Core Game Architecture
+- Built with Phaser 3, React, and Material UI
+- Traditional platformer mechanics (like Super Mario)
+- Firebase integration for deployment
+- Scene-based structure with Boot, Preload, and Game scenes
+
+### Current Features
+1. **Player Mechanics**
+   - Left/right movement with arrow keys (MOVEMENT_SPEED: 200)
+   - Jump mechanics (JUMP_VELOCITY: -400)
+   - Gravity-based physics (gravity: 1000)
+   - Character flipping based on movement direction
+   - Collision detection with platforms and obstacles
+
+2. **Level Design**
+   - Static ground platform
+   - Multiple elevated platforms
+   - Background parallax with scrolling trees
+   - Gradient background (sky to ground)
+   - Level width: 3200 pixels
+
+3. **Game Elements**
+   - Score tracking based on distance
+   - Goal/finish point
+   - Basic obstacle system
+   - Character selection screen
+
+4. **Technical Implementation**
+   - Proper depth layering (0-5)
+   - Scene management
+   - Camera system with deadzone
+   - Asset preloading
+   - Proper build configuration for assets
+
+## Priority Development Areas
+
+1. **Core Gameplay Enhancement**
+   - Add proper character animations (idle, run, jump)
+   - Implement variable jump heights based on button hold
+   - Add acceleration/deceleration to movement
+   - Consider adding wall jump or double jump mechanics
+   - Add crouching and sliding mechanics
+
+2. **Level Design System**
+   - Create proper level design tools/format
+   - Add different types of platforms:
+     * Moving platforms
+     * Disappearing platforms
+     * Bouncy platforms
+   - Add environmental hazards
+   - Design proper level progression
+
+3. **Enemy System**
+   - Basic enemy types with different behaviors:
+     * Patrolling enemies
+     * Flying enemies
+     * Jumping enemies
+   - Enemy interaction mechanics
+   - Enemy spawning system
+
+4. **Collectibles System**
+   - Add coins/gems for scoring
+   - Implement power-ups:
+     * Speed boost
+     * Jump boost
+     * Temporary invincibility
+   - Add collection effects and sounds
+
+## Technical Debt & Issues to Address
+1. Fix any remaining asset bundling issues
+2. Implement proper state management for game progression
+3. Add proper sound system
+4. Optimize performance for mobile devices
+
+## Character System Expansion
+1. Add more character options with unique abilities
+2. Implement character unlocking system
+3. Add character-specific animations and effects
+4. Consider adding character progression/upgrades
+
+## Next Immediate Steps
+1. Implement proper character animations
+2. Add basic enemy types
+3. Design first complete level
+4. Add coin collection system
+5. Implement proper game audio
+
+## Code Structure Notes
+- GameScene handles core gameplay
+- Character data in characters.js
+- Asset preloading in PreloadScene
+- Main game config in game.config.js
+
+## Build & Deployment
+- Using Vite for bundling
+- Firebase hosting
+- Assets must be properly imported in components
+- Build command: npm run build
+- Deploy command: firebase deploy
+
+## Known Issues
+1. Asset bundling in production needs proper configuration
+2. Tree backgrounds need proper cleanup on scene restart
+3. Platform collisions might need fine-tuning
+
+## Suggested Development Order
+1. First implement proper player movement physics with acceleration
+2. Add basic enemy type (patrolling ground enemy)
+3. Add coin collection system
+4. Implement level design tools
+5. Create first complete level with all elements

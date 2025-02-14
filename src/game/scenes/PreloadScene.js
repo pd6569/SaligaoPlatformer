@@ -4,6 +4,8 @@ import characterSprite from '../../assets/sprites/placeholder-character.png';
 import platformSprite from '../../assets/sprites/platform.png';
 import goalSprite from '../../assets/sprites/goal.png';
 import frogSprite from '../../assets/sprites/obstacle-frog.png';
+import treeSprite from '../../assets/backgrounds/tree.png';
+import coinSprite from '../../assets/sprites/coin.png';
 
 export class PreloadScene extends Phaser.Scene {
   constructor() {
@@ -30,16 +32,13 @@ export class PreloadScene extends Phaser.Scene {
     });
     loadingText.setOrigin(0.5, 0.5);
 
-    // Load game assets
-    this.load.on('filecomplete', (key) => {
-      console.log('Loaded asset:', key);
-    });
-
-    // Load the assets with explicit dimensions
+    // Load game assets with explicit dimensions
     this.load.image('player', characterSprite);
     this.load.image('platform', platformSprite);
     this.load.image('goal', goalSprite);
     this.load.image('obstacleFrog', frogSprite);
+    this.load.image('tree', treeSprite);
+    this.load.image('coin', coinSprite);
 
     // Update the progress bar
     this.load.on('progress', (value) => {
